@@ -64,7 +64,7 @@ def get_dogs(dog: Dog):
 
 
 @app.get("/dog", response_model=list[Dog])
-def read_dogs(kind: DogType = None):
+def read_dogs(kind: DogType):
     if kind:
         return [dog for dog in dogs_db if dog["kind"] == kind]
     return dogs_db
